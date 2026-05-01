@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Disclosures — alphawalk</title>
+<meta name="description" content="Risk disclosure, data, and coverage terms for alphawalk." />
+<meta name="theme-color" content="#02030a" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='4' y1='26' x2='23' y2='8' gradientUnits='userSpaceOnUse'><stop offset='0%25' stop-color='%235fe8ff'/><stop offset='35%25' stop-color='%237cc9ff'/><stop offset='70%25' stop-color='%23cfe7ff'/><stop offset='100%25' stop-color='%23f4f8ff'/></linearGradient></defs><rect width='32' height='32' rx='7' fill='%2302030a'/><path d='M6 25 L12 11 L17 21 L22 9 L27 25' stroke='url(%23g)' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='22' cy='9' r='3.2' fill='%23cfe7ff' opacity='0.35'/><circle cx='22' cy='9' r='2' fill='%23f4f8ff'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  :root{
+    --ink-0:#05070d;
+    --rope:#5fe8ff;
+    --icy:#cfe7ff;
+    --paper:#eef2ff;
+    --paper-soft:rgba(238,242,255,.82);
+    --paper-mute:rgba(238,242,255,.65);
+    --paper-faint:rgba(238,242,255,.5);
+    --sans:'Manrope',system-ui,-apple-system,Helvetica,Arial,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  }
+  body{
+    font-family:var(--sans);
+    color:var(--paper);
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(95,232,255,.08), transparent 55%),
+      radial-gradient(ellipse at 80% 120%, rgba(43,93,255,.06), transparent 50%),
+      #02030a;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  a{color:var(--rope);text-decoration:none}
+  a:hover{color:#fff}
+  .shell{max-width:760px; margin:0 auto; padding:0 24px}
+
+  /* Minimal top nav — logo + back link */
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 24px 0;
+    max-width:1240px; margin:0 auto;
+  }
+  .wordmark{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--sans); font-weight:600; font-size:18px;
+    letter-spacing:-.01em; color:#fff;
+  }
+  .wordmark .mark-glyph{width:22px; height:22px}
+  .back-link{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--paper-mute);
+    padding:9px 16px; border-radius:999px;
+    border:1px solid rgba(207,231,255,.18);
+    background:rgba(4,6,12,.5);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transition:color .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .back-link:hover{
+    color:#fff;
+    border-color:rgba(95,232,255,.4);
+    background:rgba(95,232,255,.08);
+  }
+
+  /* Content */
+  main{padding:clamp(60px, 10vh, 120px) 0 120px}
+  .topic{
+    font-family:var(--mono); font-size:11px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--rope);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:var(--sans); font-weight:400;
+    font-size:clamp(32px, 5.2vw, 48px);
+    letter-spacing:-.02em; line-height:1.08;
+    margin:0 0 28px;
+    background:linear-gradient(180deg,#fff 0%,#cfe7ff 70%,#7cc9ff 100%);
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent;
+  }
+  .intro{
+    font-size:17px; line-height:1.6;
+    color:var(--paper-soft); margin:0 0 40px;
+  }
+  h2{
+    font-family:var(--sans); font-weight:500;
+    font-size:19px; letter-spacing:-.005em;
+    color:#fff;
+    margin:36px 0 10px;
+  }
+  p{
+    font-size:15px; line-height:1.7;
+    color:var(--paper-soft);
+    margin:0 0 12px;
+  }
+  .section{
+    padding:24px 28px;
+    border-radius:16px;
+    border:1px solid rgba(207,231,255,.10);
+    background:linear-gradient(150deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+    margin-bottom:16px;
+  }
+  .section h2{margin-top:0}
+
+  /* Footer */
+  footer{
+    border-top:1px solid rgba(207,231,255,.08);
+    padding:30px 0;
+    font-size:12px; color:var(--paper-faint);
+    text-align:center;
+    font-family:var(--mono); letter-spacing:.08em;
+  }
+  footer a{color:var(--paper-mute); margin:0 8px}
+  footer a:hover{color:#fff}
+
+  @media (max-width:600px){
+    .nav{padding:16px 16px 0}
+    .shell{padding:0 18px}
+    .section{padding:20px 18px}
+    main{padding:60px 0 80px}
+    .intro{font-size:15.5px}
+    p{font-size:14.5px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="wordmark" aria-label="alphawalk — home">
+    <svg class="mark-glyph" viewBox="0 0 32 32" aria-hidden="true">
+      <defs>
+        <linearGradient id="g" x1="4" y1="26" x2="23" y2="8" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#5fe8ff"/>
+          <stop offset="35%"  stop-color="#7cc9ff"/>
+          <stop offset="70%"  stop-color="#cfe7ff"/>
+          <stop offset="100%" stop-color="#f4f8ff"/>
+        </linearGradient>
+      </defs>
+      <path d="M4 25 L10 11 L15 21 L20 9 L25 25" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="20" cy="9" r="2.6" fill="#cfe7ff" opacity="0.35"/>
+      <circle cx="20" cy="9" r="1.6" fill="#f4f8ff"/>
+    </svg>
+    <span>alphawalk</span>
+  </a>
+  <a href="index.html" class="back-link">← back</a>
+</nav>
+
+<main>
+  <div class="shell">
+    <div class="topic">Full disclosures</div>
+    <h1>Risk disclosure.</h1>
+    <p class="intro">alphawalk is a companion tool, not a broker or adviser. These terms explain what that means for you, what we do and don't do with your data, and where alphawalk is available.</p>
+
+    <div class="section">
+      <h2>Not advice.</h2>
+      <p>alphawalk is an information, research, and learning tool. Nothing the AI crew writes, says, voices, or shows is a recommendation to buy, sell, hold, or size any security, derivative, token, or other financial instrument. alphawalk is not a broker-dealer, investment adviser, financial planner, or fiduciary.</p>
+    </div>
+
+    <div class="section">
+      <h2>No guarantees.</h2>
+      <p>Markets involve real and substantial risk of loss. Past performance — of any strategy, pattern, setup, or market — is not indicative of future results. No claim is made that using alphawalk will produce profits or avoid losses. Many people who trade actively lose money.</p>
+    </div>
+
+    <div class="section">
+      <h2>You decide.</h2>
+      <p>Alpha never trades for you. Every decision to open, size, hold, or close a position is yours alone. You should consider your own objectives, experience, risk tolerance, and financial situation — and, where appropriate, consult a licensed professional — before acting on any information from alphawalk or any other source.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data.</h2>
+      <p>alphawalk stores the minimum information needed to run your crew (preferences, watchlist, interaction history). Your conversations with the crew are delivered through third-party messengers (Telegram, WhatsApp); their security and privacy practices govern the transport. We do not sell your data.</p>
+    </div>
+
+    <div class="section">
+      <h2>Coverage.</h2>
+      <p>alphawalk is not available in every jurisdiction. Some features may be limited or unavailable depending on your location and applicable regulation. If in doubt, contact us before starting.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 alphawalk ·
+  <a href="index.html">home</a>
+  <a href="index.html#faq">faq</a>
+</footer>
+
+</body>
+</html>
