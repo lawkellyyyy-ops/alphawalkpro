@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Disclosures · alphawalk</title>
+<meta name="description" content="Risk disclosures, data handling, and coverage terms for alphawalk." />
+<meta name="theme-color" content="#06091a" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+<link rel="mask-icon" href="favicon.svg" color="#5fe8ff" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+<!-- shared brand stylesheet · keeps disclosures and landing visually one site -->
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ============================================================
+   disclosures · page-local layout only
+   All colors, type, and motion tokens come from styles.css.
+   This block handles the long-form column and section rhythm.
+   ============================================================ */
+.disc-page{
+  padding: clamp(96px, 12vw, 160px) 0 clamp(72px, 10vw, 120px);
+  position: relative;
+}
+.disc-shell{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+
+/* HEADER · eyebrow + h1 + lede · matches landing editorial frame */
+.disc-head{
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+.disc-head .eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--paper-mute);
+  margin-bottom: 22px;
+}
+.disc-head .eyebrow .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--rope);
+  box-shadow: 0 0 8px var(--rope);
+  animation: pulse 2.4s var(--ease-out) infinite;
+}
+.disc-head h1{
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(40px, 6.2vw, 72px);
+  letter-spacing: -.04em;
+  line-height: 1.04;
+  color: var(--paper);
+  margin: 0 0 24px;
+}
+.disc-head h1 em{
+  font-style: normal;
+  color: var(--paper-soft);
+}
+.disc-head .lede{
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.55;
+  color: var(--paper-mute);
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* meta strip · last updated · contact */
+.disc-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--paper-faint);
+}
+.disc-meta .sep{ color: var(--paper-ghost); }
+.disc-meta a{
+  color: var(--paper-mute);
+  text-decoration: none;
+  transition: color .25s var(--ease-out);
+}
+.disc-meta a:hover{ color: var(--rope); }
+
+/* SECTIONS · matches the editorial card rhythm of the landing */
+.disc-list{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.4vw, 28px);
+}
+.disc-section{
+  position: relative;
+  padding: clamp(24px, 3vw, 36px) clamp(22px, 3vw, 36px);
+  border-radius: var(--r-lg);
+  background: rgba(238,242,255,.025);
+  border: 1px solid var(--rule);
+  transition: border-color .35s var(--ease-out), background .35s var(--ease-out);
+}
+.disc-section:hover{
+  border-color: var(--rule-strong);
+  background: rgba(95,232,255,.035);
+}
+.disc-section .num{
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--rope);
+  margin-bottom: 14px;
+}
+.disc-section h2{
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -.025em;
+  line-height: 1.18;
+  color: var(--paper);
+  margin: 0 0 14px;
+}
+.disc-section h2 em{
+  font-style: normal;
+  color: var(--rope);
+  font-weight: 400;
+}
+.disc-section p{
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--paper-soft);
+  margin: 0 0 12px;
+}
+.disc-section p:last-child{ margin-bottom: 0; }
+.disc-section p strong{
+  color: var(--paper);
+  font-weight: 500;
+}
+
+/* the autonomy ember beat · "you decide" gets the warm accent */
+.disc-section.is-ember{
+  background: rgba(255,177,106,.04);
+  border-color: rgba(255,177,106,.22);
+}
+.disc-section.is-ember:hover{
+  background: rgba(255,177,106,.06);
+  border-color: rgba(255,177,106,.32);
+}
+.disc-section.is-ember .num{ color: var(--ember-warm); }
+.disc-section.is-ember h2 em{ color: var(--ember-warm); }
+
+/* fine-print signature line · matches footer tone */
+.disc-tail{
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(28px, 3.5vw, 40px);
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  line-height: 1.7;
+  color: var(--paper-faint);
+}
+.disc-tail a{ color: var(--paper-mute); }
+.disc-tail a:hover{ color: var(--rope); }
+
+/* MOBILE · keep the back link visible (inherited nav-cta hides at <880px) */
+@media (max-width: 880px){
+  .nav-cta.is-disc-back{ display: inline-flex !important; }
+  .nav-cta.is-disc-back .arrow-text{ display: none; }
+}
+@media (max-width: 600px){
+  .disc-page{ padding-top: clamp(64px, 14vw, 96px); }
+  .disc-head{ margin-bottom: 40px; }
+  .disc-head h1{ font-size: clamp(34px, 9vw, 48px); }
+  .disc-head .lede{ font-size: 16.5px; }
+  .disc-section{ padding: 22px 20px; }
+  .disc-section h2{ font-size: 22px; }
+  .disc-section p{ font-size: 15px; line-height: 1.65; }
+  .disc-meta{ font-size: 10.5px; letter-spacing: .2em; gap: 12px; }
+  .disc-meta .sep{ display: none; }
+}
+@media (max-width: 380px){
+  .nav-cta.is-disc-back{ padding: 8px 12px; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV · simplified · keeps the brand mark and a way home
+     ============================================================ -->
+<nav class="nav is-past-hero" id="nav" aria-label="Top">
+  <a href="index.html" class="wordmark" aria-label="alphawalk home">
+    <span class="mark" aria-hidden="true">
+      <img src="favicon.svg" alt="" width="32" height="32" decoding="async" />
+    </span>
+    <span class="wordmark-text">alphawalk</span>
+  </a>
+  <div class="nav-links" aria-label="Primary">
+    <a href="index.html#router">Best model</a>
+    <a href="index.html#judge">Judgement</a>
+    <a href="index.html#discipline">Discipline</a>
+    <a href="index.html#faq">Faq</a>
+  </div>
+  <a href="index.html" class="nav-cta is-disc-back" aria-label="Back to alphawalk home">
+    <span class="arrow">←</span>
+    <span class="arrow-text">Back to alphawalk</span>
+  </a>
+</nav>
+
+<main class="disc-page" id="top">
+  <div class="disc-shell">
+
+    <!-- HEADER -->
+    <header class="disc-head">
+      <span class="eyebrow"><span class="dot"></span>Full disclosures</span>
+      <h1>What this is.<br/><em>And what it isn't.</em></h1>
+      <p class="lede">
+        alphawalk is a companion for the long walk. Not a broker, not an adviser, not a fund. These notes spell out what we do, what we don't do, and what you keep deciding.
+      </p>
+      <div class="disc-meta">
+        <span>Last updated · 16 may 2026</span>
+        <span class="sep">·</span>
+        <a href="mailto:hello@alphawalk.ai">hello@alphawalk.ai</a>
+      </div>
+    </header>
+
+    <!-- BODY · seven quiet sections -->
+    <div class="disc-list">
+
+      <section class="disc-section">
+        <span class="num">01 · not advice</span>
+        <h2>Information, <em>not advice.</em></h2>
+        <p>alphawalk is an information, research, and learning tool. Nothing the crew writes, says, voices, or shows is a recommendation to buy, sell, hold, or size any security, derivative, token, or other financial instrument.</p>
+        <p>alphawalk is not a broker-dealer, investment adviser, financial planner, or fiduciary. We are software for research and trade-craft.</p>
+      </section>
+
+      <section class="disc-section">
+        <span class="num">02 · no guarantees</span>
+        <h2>No promises about <em>the future.</em></h2>
+        <p>Markets carry real and substantial risk of loss. Past performance — of any strategy, pattern, setup, or market — does not indicate future results. No claim is made that using alphawalk will produce profits or avoid losses.</p>
+        <p>Many people who trade actively lose money. Use of the product at any size, with any frequency, should reflect that reality.</p>
+      </section>
+
+      <section class="disc-section is-ember">
+        <span class="num">03 · you decide</span>
+        <h2>Alpha never <em>touches the trigger.</em></h2>
+        <p>Every decision to open, size, hold, or close a position is yours alone. Alpha and the crew read, reason, surface context, and push back — they do not place orders, custody assets, or move money on your behalf.</p>
+        <p>You should consider your own objectives, experience, risk tolerance, and financial situation — and, where appropriate, consult a licensed professional — before acting on any information from alphawalk or any other source.</p>
+      </section>
+
+      <section class="disc-section">
+        <span class="num">04 · paper only</span>
+        <h2>Paper trades, <em>during beta.</em></h2>
+        <p>During beta, alphawalk operates in paper-only mode. No real positions are opened, no funds are moved, and no broker integration is live. Any P&amp;L, hit rate, or pattern signal reflects simulated activity for learning and review.</p>
+        <p>When live trading is introduced, opt-in will be explicit, with separate terms covering execution and custody handled by regulated third parties.</p>
+      </section>
+
+      <section class="disc-section">
+        <span class="num">05 · data</span>
+        <h2>Your conversations, <em>your data.</em></h2>
+        <p>alphawalk stores the minimum information needed to run your crew: preferences, watchlist, interaction history, and the messages we exchange to coach the model. We do not sell, share, or repackage walker data.</p>
+        <p>Conversations are delivered through third-party messengers (Telegram, WhatsApp). Their security and privacy practices govern the transport layer. End-to-end encryption is in place on every message channel we control. You can delete your history at any time; we wipe ours alongside on a 30-day cycle.</p>
+        <p>SOC 2 Type II audit is in progress · Q3 2026. Data residency available in US, EU, and SG.</p>
+      </section>
+
+      <section class="disc-section">
+        <span class="num">06 · sources</span>
+        <h2>Every call <em>cites its source.</em></h2>
+        <p>The crew reads market data (LSEG, Polygon, IEX), filings (SEC EDGAR, HKEX, SGX), macro indicators (FRED, Trading Economics, BIS), newsflow (Reuters, Bloomberg wires, curated), and options data (OCC chain, CME term structure).</p>
+        <p>Third-party data is subject to those providers' licensing and accuracy. We surface the receipt with every signal; you can trace any claim back to its source.</p>
+      </section>
+
+      <section class="disc-section">
+        <span class="num">07 · coverage</span>
+        <h2>Not available <em>everywhere.</em></h2>
+        <p>alphawalk is not available in every jurisdiction. Some features may be limited or unavailable depending on your location and applicable regulation. If you are unsure whether use is permitted where you are, contact us before starting.</p>
+        <p>For questions about coverage, data handling, or anything in these disclosures, write to <a href="mailto:hello@alphawalk.ai">hello@alphawalk.ai</a>.</p>
+      </section>
+
+    </div>
+
+    <!-- TAIL · the boilerplate, kept quiet -->
+    <p class="disc-tail">
+      alphawalk is software for research and trade-craft. Not investment advice. Trading involves risk of loss. Past performance does not indicate future results. © 2026 alphawalk · a companion for the long walk.
+    </p>
+
+  </div>
+</main>
+
+<!-- ============================================================
+     FOOTER · matches landing page footer system
+     ============================================================ -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="index.html" class="wordmark">
+        <span class="mark" aria-hidden="true">
+          <img src="favicon.svg" alt="" width="32" height="32" decoding="async" />
+        </span>
+        <span class="wordmark-text">alphawalk</span>
+      </a>
+      <p class="italic">There is no finish line. Only the walk.</p>
+    </div>
+    <div class="foot-col">
+      <h4>The edges</h4>
+      <a href="index.html#router">Best model</a>
+      <a href="index.html#judge">Judgement</a>
+      <a href="index.html#proactive">Proactive</a>
+      <a href="index.html#discipline">Discipline</a>
+      <a href="index.html#translate">Plain pictures</a>
+      <a href="index.html#ledger">Ledger</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="index.html#faq">Faq</a>
+      <a href="mailto:hello@alphawalk.ai">Contact</a>
+      <a href="index.html#cta">Beta access</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a href="disclosures.html">Disclosures</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Risk</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 alphawalk · a companion for the long walk</span>
+    <p class="disclaimer">
+      alphawalk is software for research and trade-craft. Not investment advice. Trading involves risk of loss. Past performance does not indicate future results.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
